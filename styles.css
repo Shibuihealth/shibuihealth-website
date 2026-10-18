@@ -634,6 +634,33 @@ section + section { border-top: 1px solid var(--line); }
   .service-block { grid-template-columns: 1fr; }
 }
 
+/* Team portraits — hairline frame, subtly muted to sit with the palette */
+.portrait {
+  margin: 12px 0 0;
+  width: min(220px, 60%);
+  padding: 6px;
+  border: 1px solid var(--line);
+  position: relative;
+}
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  filter: saturate(0.72) contrast(0.97) sepia(0.08);
+}
+.portrait::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: var(--seal);
+  border-radius: 1px;
+  right: -4px;
+  bottom: -4px;
+}
+
 .badge-soon {
   display: inline-block;
   font-size: 0.72rem;
