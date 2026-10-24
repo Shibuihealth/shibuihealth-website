@@ -12,7 +12,7 @@
   --paper-2: #E0DDD2;    /* mist — recessed panel tone */
   --ink: #1E211D;        /* sumi — near-black ink */
   --ink-soft: #52564C;   /* secondary text */
-  --ink-faint: #83836f;  /* tertiary / meta text */
+  --ink-faint: #5c5c50;  /* tertiary / meta text */
   --pine: #3B4F47;       /* primary accent — deep pine */
   --pine-deep: #2B3B35;  /* pine, pressed / hover */
   --pine-tint: #6C8479;  /* pine, muted for borders on dark */
@@ -38,7 +38,7 @@
     --paper-2: #21231B;
     --ink: #ECE8DC;
     --ink-soft: #B9B6A6;
-    --ink-faint: #82806d;
+    --ink-faint: #9a9884;
     --pine: #93AC9F;
     --pine-deep: #B7CBC1;
     --pine-tint: #4C5E56;
@@ -55,7 +55,7 @@
   --paper-2: #21231B;
   --ink: #ECE8DC;
   --ink-soft: #B9B6A6;
-  --ink-faint: #82806d;
+  --ink-faint: #9a9884;
   --pine: #93AC9F;
   --pine-deep: #B7CBC1;
   --pine-tint: #4C5E56;
@@ -123,7 +123,7 @@ p { margin: 0; }
 }
 
 /* -- focus / motion ------------------------------------------------------ */
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
   outline: 2px solid var(--seal);
   outline-offset: 3px;
   border-radius: 2px;
@@ -754,3 +754,81 @@ section + section { border-top: 1px solid var(--line); }
 
 .table-scroll table { min-width: 560px; }
 @media (min-width: 561px) { .table-scroll table { min-width: 0; } }
+
+/* ==========================================================================
+   Additions: skip link, notices, enquiry form, step links, prose
+   ========================================================================== */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  z-index: 100;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 10px 16px;
+  text-decoration: none;
+}
+.skip-link:focus { left: 8px; }
+
+.notice {
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--seal);
+  background: var(--surface);
+  padding: 14px 18px;
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  max-width: var(--measure);
+}
+.notice strong { color: var(--ink); font-weight: 500; }
+.notice a { color: inherit; }
+
+.step a.link {
+  margin-top: auto;
+  align-self: flex-start;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--seal);
+  padding-bottom: 1px;
+}
+
+.form { display: grid; gap: 20px; max-width: 640px; }
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.form input, .form select, .form textarea {
+  font: inherit;
+  font-size: 1rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 12px 14px;
+  width: 100%;
+}
+.form textarea { min-height: 140px; resize: vertical; }
+.form .check {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+.form .check input { width: auto; margin-top: 5px; }
+.form .hp { position: absolute; left: -9999px; }
+.form button.btn { cursor: pointer; font-family: var(--font-body); }
+.form .notice { margin-top: 0; }
+
+.prose { max-width: var(--measure); display: flex; flex-direction: column; gap: 16px; color: var(--ink-soft); }
+.prose h2 { font-size: 1.5rem; color: var(--ink); margin-top: 18px; }
+.prose a { color: inherit; }
