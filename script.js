@@ -5,6 +5,17 @@
   var year = new Date().getFullYear();
   yearEls.forEach(function (el) { el.textContent = year; });
 
+  // Pre-select the enquiry topic from ?topic=...
+  var topicSel = document.getElementById('topic');
+  if (topicSel) {
+    var m = /[?&]topic=([a-z]+)/.exec(window.location.search);
+    if (m) {
+      for (var i = 0; i < topicSel.options.length; i++) {
+        if (topicSel.options[i].value === m[1]) { topicSel.selectedIndex = i; break; }
+      }
+    }
+  }
+
   // Mobile nav toggle
   var toggle = document.getElementById('navToggle');
   var nav = document.getElementById('siteNav');

@@ -1,10 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Contact — Shibui Health</title>
-<meta name="description" content="Contact Shibui Health in Wynyard, Tasmania — phone and email, plus how to book an appointment online via Halaxy.">
+<meta name="description" content="Contact Shibui Health in Wynyard, Tasmania — book a nurse practitioner phone consult online, or send an enquiry about in-person visits, midwifery care or HypnoBirthing® classes.">
+<meta property="og:title" content="Contact — Shibui Health">
+<meta property="og:description" content="Contact Shibui Health in Wynyard, Tasmania — book a nurse practitioner phone consult online, or send an enquiry about in-person visits, midwifery care or HypnoBirthing® classes.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_AU">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -12,6 +16,7 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header" id="siteHeader">
   <div class="header-inner">
     <a href="index.html" class="wordmark"><span class="seal-mark" aria-hidden="true"></span>Shibui Health</a>
@@ -19,31 +24,102 @@
       <a href="index.html">Home</a>
       <a href="services.html">Care &amp; Pricing</a>
       <a href="about.html">About</a>
-      <a href="hypnobirthing.html">HypnoBirthing</a>
+      <a href="hypnobirthing.html">HypnoBirthing®</a>
       <a href="contact.html" aria-current="page">Contact</a>
-      <a href="https://www.halaxy.com/profile/shibui-health/location/1097131" class="nav-book" target="_blank" rel="noopener">Book online</a>
+      <a href="https://www.halaxy.com/profile/shibui-health/location/1097131" class="nav-book" target="_blank" rel="noopener">Book phone consult</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <section class="page-intro">
     <div class="container">
       <p class="eyebrow reveal">Contact</p>
       <h1 class="reveal">Wynyard, Tasmania — by appointment only.</h1>
-      <p class="lede reveal">The fastest way to see us is to book directly online. For anything else, reach us by phone or email below.</p>
+      <p class="lede reveal">Nurse practitioner phone consults can be booked online. For anything else, send an enquiry or call us.</p>
+      <p class="notice reveal"><strong>Not for emergencies.</strong> If you or someone else has a life-threatening condition or is in danger, call <a href="tel:000">000</a> now. Shibui Health does not provide emergency care.</p>
     </div>
   </section>
 
   <section>
     <div class="container">
       <div class="section-head reveal">
-        <h2>Get in touch</h2>
+        <h2>Which option is right?</h2>
+        <p class="lede">Online booking is for phone consults only. Everything else starts with an enquiry.</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <span class="index">A</span>
+          <h3>Book a phone consult</h3>
+          <p>Nurse practitioner consults by phone — Repair, Reshape and general care. Choose a time online. No referral required.</p>
+          <a href="https://www.halaxy.com/profile/shibui-health/location/1097131" class="link" target="_blank" rel="noopener">Book on Halaxy</a>
+        </div>
+        <div class="step">
+          <span class="index">B</span>
+          <h3>Enquire about a visit</h3>
+          <p>In-person or home visits with the nurse practitioner, arranged by enquiry depending on availability.</p>
+          <a href="?topic=inperson#enquiry" class="link">Send an enquiry</a>
+        </div>
+        <div class="step">
+          <span class="index">C</span>
+          <h3>Midwifery &amp; HypnoBirthing®</h3>
+          <p>Reborn midwifery care and HypnoBirthing® classes with Jenna are arranged by enquiry.</p>
+          <a href="?topic=midwifery#enquiry" class="link">Send an enquiry</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-panel" id="enquiry">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Send an enquiry</h2>
         <p class="lede">We reply during business hours, usually the same day.</p>
       </div>
+      <form class="form reveal" name="enquiry" method="POST" action="thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="enquiry">
+        <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <label>Your name
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label>Phone (optional)
+          <input type="tel" name="phone" autocomplete="tel">
+        </label>
+        <label>What is your enquiry about?
+          <select name="topic" id="topic">
+            <option value="general">General enquiry</option>
+            <option value="inperson">In-person or home visit (nurse practitioner)</option>
+            <option value="midwifery">Midwifery care (Reborn)</option>
+            <option value="hypnobirthing">HypnoBirthing® classes</option>
+          </select>
+        </label>
+        <label>Due date (optional, if you're pregnant)
+          <input type="text" name="due_date" placeholder="e.g. March 2027">
+        </label>
+        <label>Message
+          <textarea name="message" required></textarea>
+        </label>
+        <p class="notice"><strong>Please don't include clinical or medical details in this form.</strong> We'll discuss those in a consultation. For emergencies call <a href="tel:000">000</a>.</p>
+        <label class="check">
+          <input type="checkbox" name="consent" required>
+          <span>I agree that Shibui Health may use these details to reply to my enquiry, as described in the <a href="privacy.html">privacy notice</a>.</span>
+        </label>
+        <div><button type="submit" class="btn btn-solid">Send enquiry</button></div>
+      </form>
+    </div>
+  </section>
 
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Details</h2>
+        <p class="lede">Prefer to call or email? Here's how.</p>
+      </div>
       <div class="fact-list reveal">
         <div class="fact-row">
           <span class="k">Phone</span>
@@ -63,21 +139,7 @@
         </div>
         <div class="fact-row">
           <span class="k">Booking</span>
-          <span class="v"><a href="https://www.halaxy.com/profile/shibui-health/location/1097131" target="_blank" rel="noopener">Book online via Halaxy</a> — no referral required</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="on-panel">
-    <div class="container statement reveal">
-      <div class="glyph">予約<small>booking</small></div>
-      <div>
-        <blockquote>Most bookings take under two minutes.</blockquote>
-        <p class="statement-body">Choose a nurse practitioner or midwifery consult and a time that suits you — appointments and reminders are handled through Halaxy.</p>
-        <div class="hero-actions" style="margin-top:28px;">
-          <a href="https://www.halaxy.com/profile/shibui-health/location/1097131" class="btn btn-solid" target="_blank" rel="noopener">Book online via Halaxy</a>
-          <a href="services.html" class="btn">View care &amp; pricing</a>
+          <span class="v"><a href="https://www.halaxy.com/profile/shibui-health/location/1097131" target="_blank" rel="noopener">Book a phone consult via Halaxy</a> — no referral required</span>
         </div>
       </div>
     </div>
@@ -101,11 +163,12 @@
       <a href="index.html">Home</a>
       <a href="services.html">Care &amp; Pricing</a>
       <a href="about.html">About</a>
-      <a href="hypnobirthing.html">HypnoBirthing</a>
+      <a href="hypnobirthing.html">HypnoBirthing®</a>
       <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy &amp; telehealth</a>
     </div>
   </div>
-  <p class="footer-legal">© <span id="year"></span> Shibui Health Pty Ltd. Consultations by appointment · Medicare rebates may apply.</p>
+  <p class="footer-legal">© <span id="year"></span> Shibui Health Pty Ltd. Consultations by appointment · Medicare rebates may apply to eligible consultations. Not an emergency service — in an emergency call 000.</p>
 </footer>
 
 <script src="script.js"></script>
