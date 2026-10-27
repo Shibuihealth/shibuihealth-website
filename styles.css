@@ -863,3 +863,6 @@ section + section { border-top: 1px solid var(--line); }
 .faq details[open] summary::after { content: "–"; }
 .faq details p { margin: 0 0 18px; color: var(--ink-soft); max-width: var(--measure, 62ch); }
 .faq summary:focus-visible { outline: 2px solid var(--seal); outline-offset: 2px; }
+.faq-more { margin-top: 28px; color: var(--ink-soft); }
+.faq-more a { color: inherit; border-bottom: 1px solid var(--line); text-decoration: none; }
+.faq-more a:hover { border-color: var(--seal); }
