@@ -832,3 +832,14 @@ section + section { border-top: 1px solid var(--line); }
 .prose { max-width: var(--measure); display: flex; flex-direction: column; gap: 16px; color: var(--ink-soft); }
 .prose h2 { font-size: 1.5rem; color: var(--ink); margin-top: 18px; }
 .prose a { color: inherit; }
+
+/* HypnoBirthing Gold Seal — supplied artwork on its own white panel, shown unaltered */
+.seal-badge {
+  margin: 28px 0;
+  padding: 14px 18px;
+  background: #fff;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+}
+.seal-badge img { display: block; max-width: 100%; height: auto; }
