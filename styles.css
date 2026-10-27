@@ -847,3 +847,19 @@ section + section { border-top: 1px solid var(--line); }
   .pricing-table th, .pricing-table td { padding-left: 0; padding-right: 10px; }
   .pricing-table td.price, .pricing-table th:last-child { padding-right: 0; white-space: nowrap; }
 }
+
+/* FAQ (details/summary) */
+.faq { border-top: 1px solid var(--line); max-width: 760px; }
+.faq details { border-bottom: 1px solid var(--line); padding: 4px 0; }
+.faq summary {
+  cursor: pointer; list-style: none; position: relative;
+  padding: 16px 36px 16px 0; font-family: var(--font-display); font-size: 1.1rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  color: var(--seal); font-size: 1.4rem; line-height: 1;
+}
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin: 0 0 18px; color: var(--ink-soft); max-width: var(--measure, 62ch); }
+.faq summary:focus-visible { outline: 2px solid var(--seal); outline-offset: 2px; }
