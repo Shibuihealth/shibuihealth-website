@@ -9,9 +9,9 @@
 <meta property="og:description" content="Monthly education, an Ask Jen call and a local community, led by midwife Jen Keygan. $59 a month, cancel anytime.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_AU">
-<!-- GO-LIVE: remove this noindex tag once every [PLACEHOLDER] link below is replaced
-     ([STRIPE_CIRCLE_URL], [STRIPE_CIRCLE_VILLAGE_URL], [STRIPE_BILLING_PORTAL_URL], [HALAXY_MEMBER_BOOKING_URL]).
-     Check with: grep -n "\[[A-Z_]*_URL\]" circle.html -->
+<!-- GO-LIVE: Stripe links below are LIVE (payment links + customer portal, created 21 Nov 2026).
+     One placeholder remains: [HALAXY_MEMBER_BOOKING_URL]. Replace it or remove that button,
+     then remove this noindex tag. Check with: grep -n "\[[A-Z_]*_URL\]" circle.html -->
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,8 +47,8 @@
           <h1 class="reveal">Time to ask your questions, with a midwife who knows your name.</h1>
           <p class="lede circle-lede reveal">Monthly education, an Ask Jen call and a local community, led by Jen.</p>
           <div class="hero-actions reveal">
-            <!-- Join link: replace [STRIPE_CIRCLE_URL] in href and data-base. The script below adds the UTM tags ("?" or "&" as needed). -->
-            <a href="[STRIPE_CIRCLE_URL]?utm_source=shibuihealth_site&amp;utm_medium=web&amp;utm_campaign=circle_join" data-base="[STRIPE_CIRCLE_URL]" class="btn btn-solid js-join" target="_blank" rel="noopener">Join The Circle</a>
+            <!-- Live Stripe payment link. The script at the foot of the page appends UTM tags. -->
+            <a href="https://buy.stripe.com/00w00caWp1wi9nIaXV4Ni00?utm_source=shibuihealth_site&amp;utm_medium=web&amp;utm_campaign=circle_join" data-base="https://buy.stripe.com/00w00caWp1wi9nIaXV4Ni00" class="btn btn-solid js-join" target="_blank" rel="noopener">Join The Circle</a>
             <a href="#included" class="btn btn-quiet">See what's included</a>
           </div>
           <p class="circle-price reveal">$59 a month · cancel anytime</p>
@@ -211,14 +211,13 @@
         <p class="lede">Join, manage your billing and find the members' group, all from here.</p>
       </div>
       <div class="hub-buttons reveal">
-        <!-- GO-LIVE: replace with the live Stripe payment link once Stripe live mode is activated.
-             The test-mode links are not interchangeable — a test link takes a real payment nowhere. -->
-        <a href="[STRIPE_CIRCLE_URL]?utm_source=shibuihealth_site&amp;utm_medium=web&amp;utm_campaign=circle_join" data-base="[STRIPE_CIRCLE_URL]" class="hub-btn hub-btn-primary js-join" target="_blank" rel="noopener">
+        <!-- Live Stripe payment link: The Circle, A$59/month. -->
+        <a href="https://buy.stripe.com/00w00caWp1wi9nIaXV4Ni00?utm_source=shibuihealth_site&amp;utm_medium=web&amp;utm_campaign=circle_join" data-base="https://buy.stripe.com/00w00caWp1wi9nIaXV4Ni00" class="hub-btn hub-btn-primary js-join" target="_blank" rel="noopener">
           <span class="t">Join The Circle</span>
           <span class="d">Start your membership at $59 a month.</span>
         </a>
-        <!-- GO-LIVE: live Stripe payment link for The Circle with the Village add-on ($88 a month in total). -->
-        <a href="[STRIPE_CIRCLE_VILLAGE_URL]" class="hub-btn" target="_blank" rel="noopener">
+        <!-- Live Stripe payment link: The Circle + Village, A$88/month in total. -->
+        <a href="https://buy.stripe.com/fZu28kggJ0se0Rcc1Z4Ni01" class="hub-btn" target="_blank" rel="noopener">
           <span class="t">Join with Village</span>
           <span class="d">Add Village for $29 more a month.</span>
         </a>
@@ -226,8 +225,8 @@
           <span class="t">Members' group</span>
           <span class="d">Our private group. Request to join once you're a member.</span>
         </a>
-        <!-- GO-LIVE: live Stripe customer portal login link. -->
-        <a href="[STRIPE_BILLING_PORTAL_URL]" class="hub-btn" target="_blank" rel="noopener">
+        <!-- Live Stripe customer portal. Members cancel at period end, update cards, get receipts. -->
+        <a href="https://billing.stripe.com/p/login/00w00caWp1wi9nIaXV4Ni00" class="hub-btn" target="_blank" rel="noopener">
           <span class="t">Manage billing</span>
           <span class="d">Update your card, cancel or find your receipts.</span>
         </a>
