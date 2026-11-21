@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_AU">
 <!-- GO-LIVE: remove this noindex tag once every [PLACEHOLDER] link below is replaced
-     ([CIRCLE_JOIN_URL], [CIRCLE_VILLAGE_URL], [CIRCLE_BILLING_URL], [HALAXY_MEMBER_BOOKING_URL]).
+     ([STRIPE_CIRCLE_URL], [STRIPE_CIRCLE_VILLAGE_URL], [STRIPE_BILLING_PORTAL_URL], [HALAXY_MEMBER_BOOKING_URL]).
      Check with: grep -n "\[[A-Z_]*_URL\]" circle.html -->
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,8 +47,8 @@
           <h1 class="reveal">Time to ask your questions, with a midwife who knows your name.</h1>
           <p class="lede circle-lede reveal">Monthly education, an Ask Jen call and a local community, led by Jen.</p>
           <div class="hero-actions reveal">
-            <!-- Join link: replace [CIRCLE_JOIN_URL] in href and data-base. The script below adds the UTM tags ("?" or "&" as needed). -->
-            <a href="[CIRCLE_JOIN_URL]?utm_source=shibuihealth_site&amp;utm_medium=web&amp;utm_campaign=circle_join" data-base="[CIRCLE_JOIN_URL]" class="btn btn-solid js-join" target="_blank" rel="noopener">Join The Circle</a>
+            <!-- Join link: replace [STRIPE_CIRCLE_URL] in href and data-base. The script below adds the UTM tags ("?" or "&" as needed). -->
+            <a href="[STRIPE_CIRCLE_URL]?utm_source=shibuihealth_site&amp;utm_medium=web&amp;utm_campaign=circle_join" data-base="[STRIPE_CIRCLE_URL]" class="btn btn-solid js-join" target="_blank" rel="noopener">Join The Circle</a>
             <a href="#included" class="btn btn-quiet">See what's included</a>
           </div>
           <p class="circle-price reveal">$59 a month · cancel anytime</p>
@@ -189,11 +189,11 @@
         </div>
         <div class="fact-row">
           <span class="k">2. Get access</span>
-          <span class="v">Log in to the private community at community.shibuihealth.com.au.</span>
+          <span class="v">We'll email you a link to the private members' group and an invitation to the online sessions.</span>
         </div>
         <div class="fact-row">
           <span class="k">3. Attend</span>
-          <span class="v">Come to the monthly education session and the Ask Jen call, and join in the community whenever suits you.</span>
+          <span class="v">Come to the monthly education session and the Ask Jen call, and join in the group whenever suits you. Sessions are recorded for members who can't make it.</span>
         </div>
         <div class="fact-row">
           <span class="k">4. Book at the member price</span>
@@ -208,33 +208,36 @@
     <div class="container">
       <div class="section-head reveal">
         <h2 id="member-hub">Member Hub</h2>
-        <p class="lede">Join, log in, manage your billing and book a service, all from here.</p>
+        <p class="lede">Join, manage your billing and find the members' group, all from here.</p>
       </div>
       <div class="hub-buttons reveal">
-        <a href="[CIRCLE_JOIN_URL]?utm_source=shibuihealth_site&amp;utm_medium=web&amp;utm_campaign=circle_join" data-base="[CIRCLE_JOIN_URL]" class="hub-btn hub-btn-primary js-join" target="_blank" rel="noopener">
+        <!-- GO-LIVE: replace with the live Stripe payment link once Stripe live mode is activated.
+             The test-mode links are not interchangeable — a test link takes a real payment nowhere. -->
+        <a href="[STRIPE_CIRCLE_URL]?utm_source=shibuihealth_site&amp;utm_medium=web&amp;utm_campaign=circle_join" data-base="[STRIPE_CIRCLE_URL]" class="hub-btn hub-btn-primary js-join" target="_blank" rel="noopener">
           <span class="t">Join The Circle</span>
           <span class="d">Start your membership at $59 a month.</span>
         </a>
-        <!-- Village: point to the Circle upgrade or the $88 plan once Stripe is set up. -->
-        <a href="[CIRCLE_VILLAGE_URL]" class="hub-btn" target="_blank" rel="noopener">
-          <span class="t">Add Village</span>
+        <!-- GO-LIVE: live Stripe payment link for The Circle with the Village add-on ($88 a month in total). -->
+        <a href="[STRIPE_CIRCLE_VILLAGE_URL]" class="hub-btn" target="_blank" rel="noopener">
+          <span class="t">Join with Village</span>
           <span class="d">Add Village for $29 more a month.</span>
         </a>
-        <a href="https://community.shibuihealth.com.au" class="hub-btn" target="_blank" rel="noopener">
-          <span class="t">Member log in</span>
-          <span class="d">Go to the Circle community.</span>
+        <a href="https://www.facebook.com/groups/2584506985391708" class="hub-btn" target="_blank" rel="noopener">
+          <span class="t">Members' group</span>
+          <span class="d">Our private group. Request to join once you're a member.</span>
         </a>
-        <a href="[CIRCLE_BILLING_URL]" class="hub-btn" target="_blank" rel="noopener">
+        <!-- GO-LIVE: live Stripe customer portal login link. -->
+        <a href="[STRIPE_BILLING_PORTAL_URL]" class="hub-btn" target="_blank" rel="noopener">
           <span class="t">Manage billing</span>
           <span class="d">Update your card, cancel or find your receipts.</span>
         </a>
-        <!-- If the booking link is posted inside Circle instead: change this to "Book a service (members)" and point it at https://community.shibuihealth.com.au -->
+        <!-- GO-LIVE: members-only Halaxy link with the 10% price set, or remove this button. -->
         <a href="[HALAXY_MEMBER_BOOKING_URL]" class="hub-btn" target="_blank" rel="noopener">
           <span class="t">Book a service</span>
           <span class="d">Members-only booking, with your 10% member price.</span>
         </a>
       </div>
-      <p class="hub-note reveal">Membership billing is handled securely by our payment provider. We don't store your card details or member information on this website. See our <a href="privacy.html">privacy notice</a>.</p>
+      <p class="hub-note reveal">Monthly education sessions and recordings are held in a private members' area, and we'll send you the link when you join. Billing is handled securely by Stripe — we don't store your card details on this website. See our <a href="privacy.html">privacy notice</a>.</p>
       <p class="notice reveal">The Circle is education and community support. It does not replace individual medical care. For advice about your own pregnancy, speak with your midwife, GP or obstetric team.</p>
       <p class="hub-note reveal">Questions? Call Jen on <a href="tel:+61408488658">0408 488 658</a>.</p>
     </div>
@@ -328,7 +331,6 @@
       <a href="services.html">Care &amp; Pricing</a>
       <a href="about.html">About</a>
       <a href="circle.html">The Circle</a>
-      <a href="https://community.shibuihealth.com.au" target="_blank" rel="noopener">Member login</a>
       <a href="contact.html">Contact</a>
       <a href="privacy.html">Privacy</a>
     </div>
