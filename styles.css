@@ -562,45 +562,87 @@ section + section { border-top: 1px solid var(--line); }
 }
 
 /* ==========================================================================
-   Pricing table
+   Consultation fees — grouped by service
    ========================================================================== */
-.pricing-table {
-  width: 100%;
-  border-collapse: collapse;
-}
+.fee-caption { color: var(--ink-faint); font-size: 0.86rem; margin: 0 0 22px; }
 
-.pricing-table caption { text-align: left; margin-bottom: 14px; color: var(--ink-faint); font-size: 0.86rem; }
+.fee-group { margin-bottom: clamp(34px, 5vw, 52px); }
+.fee-group:last-of-type { margin-bottom: 0; }
 
-.pricing-table th {
-  text-align: left;
-  font-size: 0.76rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  font-weight: 500;
-  padding-bottom: 14px;
+.group-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
   border-bottom: 1px solid var(--ink);
 }
 
-.pricing-table td {
-  padding: 20px 0;
-  border-bottom: 1px solid var(--line);
-  vertical-align: top;
+.group-head .svc { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0.005em; }
+
+.group-head .prov {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pine);
+  font-weight: 500;
+  white-space: nowrap;
 }
 
-.pricing-table td.who { font-family: var(--font-display); font-size: 1.08rem; }
-.pricing-table td.what { color: var(--ink-soft); font-size: 0.92rem; }
+.fee-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem 1.5rem;
+  align-items: baseline;
+  padding-block: 18px;
+  border-bottom: 1px solid var(--line);
+}
 
-.pricing-table td.price {
+.fee-row .item { font-family: var(--font-display); font-size: 1.06rem; }
+
+.fee-row .item small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  margin-top: 3px;
+  max-width: 48ch;
+  line-height: 1.5;
+}
+
+.fee-row .fee {
   text-align: right;
   font-variant-numeric: tabular-nums;
   font-size: 1.2rem;
   white-space: nowrap;
 }
 
-.pricing-table td.price small { display: block; font-size: 0.68rem; color: var(--ink-faint); font-weight: 400; margin-top: 2px; }
+.fee-row .fee small { display: block; font-size: 0.68rem; color: var(--ink-faint); font-weight: 400; margin-top: 2px; letter-spacing: 0.04em; }
 
-.table-scroll { overflow-x: auto; }
+.fee-row .fee .pre {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-right: 0.35rem;
+  vertical-align: 0.18em;
+}
+
+.fee-row .fee.word {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pine);
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .fee-row { grid-template-columns: 1fr; gap: 0.4rem; }
+  .fee-row .fee { text-align: left; }
+  .fee-row .fee small { display: inline; margin-left: 0.4rem; }
+}
 
 .pricing-note {
   margin-top: 20px;
