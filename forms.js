@@ -17,11 +17,11 @@
 
   var FORMS = {
     'enquiry': {
-      guid: 'REPLACE_WITH_ENQUIRY_FORM_GUID',
+      guid: '23d187e9-e742-499d-bb76-a78ae0485bfa',
       thanks: 'thanks.html'
     },
     'circle-enquiry': {
-      guid: 'REPLACE_WITH_CIRCLE_FORM_GUID',
+      guid: '7b32a6af-5a66-4db4-a6b4-5156e336f736',
       thanks: 'circle-thanks.html'
     }
   };
