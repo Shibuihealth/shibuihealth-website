@@ -26,18 +26,16 @@
     }
   };
 
-  // Labels for the enquiry topic, so the CRM reads in plain English.
-  var TOPIC_LABELS = {
-    'general': 'General enquiry',
-    'inperson': 'In-person or home visit (nurse practitioner)',
-    'midwifery': 'Midwifery care (Reborn)',
-    'hypnobirthing': 'HypnoBirthing classes'
-  };
-
-  var INTEREST_LABELS = {
-    'circle': 'The Circle',
-    'antenatal-postnatal': 'Antenatal and postnatal care',
-    'something-else': 'Something else'
+  // The page's <select> values map onto the options of the HubSpot
+  // "Service of interest" property. Keep both sides in step if either changes.
+  var SERVICE_VALUES = {
+    'general': 'general',
+    'inperson': 'inperson',
+    'midwifery': 'midwifery',
+    'hypnobirthing': 'hypnobirthing',
+    'circle': 'circle',
+    'antenatal-postnatal': 'antenatal_postnatal',
+    'something-else': 'something_else'
   };
 
   function val(form, name) {
@@ -64,27 +62,10 @@
                : 'I agree that Shibui Health may use these details to reply to my enquiry.';
   }
 
-  // Builds the message body. The topic and due date are folded in as labelled
-  // lines so nothing the visitor typed is lost.
-  function buildMessage(form, formName) {
-    var lines = [];
-
-    if (formName === 'enquiry') {
-      var topic = val(form, 'topic');
-      if (topic) lines.push('Enquiry about: ' + (TOPIC_LABELS[topic] || topic));
-      var due = val(form, 'due_date');
-      if (due) lines.push('Due date: ' + due);
-    } else {
-      var interest = val(form, 'interest');
-      if (interest) lines.push('Interested in: ' + (INTEREST_LABELS[interest] || interest));
-    }
-
-    var body = val(form, 'message');
-    if (body) {
-      if (lines.length) lines.push('');
-      lines.push(body);
-    }
-    return lines.join('\n');
+  // The chosen service, as the HubSpot property's option value.
+  function serviceValue(form, formName) {
+    var raw = formName === 'enquiry' ? val(form, 'topic') : val(form, 'interest');
+    return SERVICE_VALUES[raw] || '';
   }
 
   function showError(form, message) {
@@ -140,7 +121,13 @@
       var phone = val(form, 'phone');
       if (phone) fields.push({ objectTypeId: '0-1', name: 'phone', value: phone });
 
-      var message = buildMessage(form, formName);
+      var service = serviceValue(form, formName);
+      if (service) fields.push({ objectTypeId: '0-1', name: 'service_of_interest', value: service });
+
+      var due = val(form, 'due_date');
+      if (due) fields.push({ objectTypeId: '0-1', name: 'baby_due', value: due });
+
+      var message = val(form, 'message');
       if (message) fields.push({ objectTypeId: '0-1', name: 'message', value: message });
 
       var payload = {
