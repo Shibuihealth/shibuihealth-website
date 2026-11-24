@@ -1033,3 +1033,18 @@ section + section { border-top: 1px solid var(--line); }
   font-size: 0.88rem;
   color: var(--ink-soft);
 }
+
+/* Footer social links */
+.footer-contact a[aria-label="Facebook"],
+.footer-contact a[aria-label="Instagram"] {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 16px;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+.footer-contact a[aria-label="Facebook"]:hover,
+.footer-contact a[aria-label="Instagram"]:hover { color: var(--seal); border-bottom-color: var(--seal); }
