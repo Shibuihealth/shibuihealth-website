@@ -349,9 +349,11 @@
         <h2>Register your interest</h2>
         <p class="lede">Leave your details and Jen will let you know as soon as The Circle opens in 2027. No payment, no commitment — and you'll hear before it's announced anywhere else.</p>
       </div>
-      <!-- Netlify form. Feeding the CRM and the auto-reply are set up in Netlify/HubSpot, not in this file. -->
-      <form class="form reveal" name="circle-enquiry" method="POST" action="https://shibuihealth.netlify.app/circle-thanks.html" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="circle-enquiry">
+      <noscript>
+        <p class="notice">This form needs JavaScript. Please call <a href="tel:+61455081480">0455 081 480</a> or email <a href="mailto:admin@shibuihealth.com.au">admin@shibuihealth.com.au</a> instead.</p>
+      </noscript>
+      <!-- Submits to HubSpot from forms.js. The design stays here; the CRM and the notification email are configured in HubSpot. -->
+      <form class="form reveal" name="circle-enquiry" method="POST">
         <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <label>Your name
           <input type="text" name="name" autocomplete="name" required>
@@ -404,6 +406,7 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="forms.js"></script>
 <script>
 // Carry any utm_* tags from the visit (e.g. an Instagram post link) onto the Join buttons.
 (function () {

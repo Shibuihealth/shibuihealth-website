@@ -87,8 +87,11 @@
         <h2>Send an enquiry</h2>
         <p class="lede">We reply during business hours, usually the same day.</p>
       </div>
-      <form class="form reveal" name="enquiry" method="POST" action="https://shibuihealth.netlify.app/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="enquiry">
+      <noscript>
+        <p class="notice">This form needs JavaScript. Please call <a href="tel:+61455081480">0455 081 480</a> or email <a href="mailto:admin@shibuihealth.com.au">admin@shibuihealth.com.au</a> instead.</p>
+      </noscript>
+      <!-- Submits to HubSpot from forms.js. The design stays here; the CRM and the notification email are configured in HubSpot. -->
+      <form class="form reveal" name="enquiry" method="POST">
         <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <label>Your name
           <input type="text" name="name" autocomplete="name" required>
@@ -189,5 +192,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="forms.js"></script>
 </body>
 </html>
